@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      
+      
+      System.out.println("Enter the Srinu value:");
+      int srinu=sc.nextInt();
+      if(srinu<0 || srinu>50){
+          System.out.println(srinu + " is invalid");
+      }
+      
+      
+      System.out.println("Enter the Ramesh value: ");
+      int ramesh=sc.nextInt();
+      if(ramesh<0 || ramesh>50){
+          System.out.println(ramesh + " is invalid");
+          
+      }
+      System.out.println("Enter the Ak value:");
+      int Ak=sc.nextInt();
+      if(Ak<0 || Ak>50){
+          System.out.println(Ak + "is invalid");
+      }
+      if(srinu==ramesh || srinu==Ak || ramesh==Ak){
+          System.out.println("The game is tie");
+      }
+      else if(srinu>ramesh || srinu>Ak){
+          System.out.println(srinu +"The game winner is srinu");
+      }
+      else if(ramesh>srinu || ramesh>Ak){
+          System.out.println(ramesh +"The game winner is ramesh");
+          
+      }
+      else if (Ak>srinu || Ak>ramesh){
+          System.out.println(Ak +"The game winner is Ak");
+      }
+      }
+}
