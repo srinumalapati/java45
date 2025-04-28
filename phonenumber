@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the phone number:");
+        long phone = sc.nextLong();
+
+        int even = 0, odd = 0;
+        long temp = phone, rem;
+
+        while (temp > 0) {
+            rem = temp % 10;
+            if (rem % 2 == 0) {
+                even += rem;
+            } else {
+                odd += rem;
+            }
+            temp = temp / 10;
+        }
+
+        if (odd > even) {
+            System.out.println("Sum of odd digits is greater than even digits.");
+        } else if (even > odd) {
+            System.out.println("Sum of even digits is greater than odd digits.");
+        } else {
+            System.out.println("Sum of even and odd digits is the same.");
+        }
+    }
+}
