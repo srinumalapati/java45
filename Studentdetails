@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the ID:");
+        int id = sc.nextInt();
+
+        System.out.println("Enter the name of student:");
+        String name = sc.next();
+
+        System.out.println("Enter the dept number:");
+        String dept = sc.next();
+
+        System.out.println("Enter the cgpa:");
+        float cgpa = sc.nextFloat(); 
+
+//student object creation
+        Student studobj = new Student(); 
+        studobj.setStudentId(id);
+        studobj.setName(name);
+        studobj.setDepartmentName(dept);
+        studobj.setCgpa(cgpa); 
+
+        char grade = studobj.calculateGrade(); 
+        
+        System.out.println("id is " + studobj.getStudentId());
+        System.out.println("name is " + studobj.getName());
+        System.out.println("department is " + studobj.getDepartmentName());
+        System.out.println("cgpa is " + studobj.getCgpa());
+        System.out.println("grade is " + grade);
+        
+        sc.close();
+    }
+}
+
+// student class
+
+class Student {
+    private int studentId;
+    private String name;
+    private String departmentName;
+    private float cgpa;
+    
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+    
+    public int getStudentId() {
+        return studentId;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
+    
+    public String getDepartmentName() {
+        return departmentName;
+    }
+    
+    public void setCgpa(float cgpa) {
+        this.cgpa = cgpa;
+    }
+    
+    public float getCgpa() {
+        return cgpa;
+    }
+    
+    public char calculateGrade() {  // checking the cgpa condition
+        if (cgpa >= 9.0) {
+            return 'A';
+        } else if (cgpa >= 8.0) {
+            return 'B';
+        } else if (cgpa >= 7.0) {
+            return 'C';
+        } else if (cgpa >= 6.0) {
+            return 'D';
+        } else {
+            return 'F';
+        }
+    }
+}
