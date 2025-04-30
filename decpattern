@@ -1,0 +1,21 @@
+public class Main{
+    public static void main(String args[]){
+        int srinu=5;
+        
+        for( int i=0;i<=srinu;i++){
+            for(int j=i;j<=srinu;j++){
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+            }
+    
+}
+
+
+//output
+///* * * * * 
+///* * * *
+//* * * 
+//* *
+//*
